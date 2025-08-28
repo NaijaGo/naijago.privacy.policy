@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NaijaGo Privacy Policy</title>
+<style>
+/* Reset & basics */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background: #f0f4f8; color: #333; line-height: 1.6; }
+
+/* Header with round watermark */
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: white;
+    padding: 100px 20px 60px 20px;
+    overflow: hidden;
+}
+
+.header h1 {
+    font-size: 3rem;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    z-index: 2;
+    position: relative;
+}
+
+/* Round watermark logo */
+.header::before {
+    content: '';
+    background: url('naijago-app.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    opacity: 0.08;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: -60px auto 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+/* Policy cards */
+.policy-section {
+    background: white;
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.policy-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.policy-section h2 {
+    color: #182848;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.policy-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #4b6cb7;
+    margin-top: 6px;
+    border-radius: 3px;
+}
+
+/* FAQ Section */
+.faq-item {
+    margin-top: 18px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 16px;
+    font-size: 1rem;
+    background: #4b6cb7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover { background: #182848; }
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after { transform: rotate(45deg); }
+
+.faq-answer {
+    padding: 15px 20px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-top: 6px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    background: #182848;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header h1 { font-size: 2rem; }
+    .policy-section { padding: 20px 25px; }
+    .faq-question { font-size: 0.95rem; padding: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <h1>NaijaGo Privacy Policy</h1>
+    <p>Your privacy matters to us. Read our policies below.</p>
+</header>
+
+<main class="container">
+    <section class="policy-section">
+        <h2>1. Information We Collect</h2>
+        <p>We may collect personal information like your name, email, and browsing activity to improve our services.</p>
+    </section>
+
+    <section class="policy-section">
+        <h2>2. How We Use Your Information</h2>
+        <p>Information collected is used to provide, maintain, and improve our services, and for analytics.</p>
+    </section>
+
+    <section class="policy-section">
+        <h2>3. Sharing Information</h2>
+        <p>We do not sell your personal information. We may share data with trusted partners to provide better services.</p>
+    </section>
+
+    <section class="policy-section">
+        <h2>4. Cookies</h2>
+        <p>We use cookies to personalize content and improve user experience.</p>
+    </section>
+
+    <section class="policy-section faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question">Can I request my data?</button>
+            <div class="faq-answer">
+                <p>Yes, you can request your data at any time by contacting us via email.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How is my data protected?</button>
+            <div class="faq-answer">
+                <p>We use industry-standard security measures to protect your data.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 NaijaGo. All Rights Reserved.</p>
+</footer>
+
+<script>
+// FAQ toggle
+const faqButtons = document.querySelectorAll('.faq-question');
+faqButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isActive = button.classList.contains('active');
+
+        // Hide all answers
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-question').forEach(btn => btn.classList.remove('active'));
+
+        // Toggle clicked
+        if (!isActive) {
+            answer.style.display = 'block';
+            button.classList.add('active');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
